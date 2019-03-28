@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.yixiantong.dao.UserDao">
+    <resultMap id="userInfo" type="com.server.yixiantong.domain.User"/>
+    <!--添加一个用户-->
+    <insert id="insertUser" parameterType="com.server.yixiantong.domain.User">
+        INSERT into user_info (user_name, user_pwd, user_nick_name)
+        VALUES (#{user_name}, #{user_pwd}, #{user_nick_name})
+    </insert>
+    <!--通过id查找一个用户-->
+    <select id="searchUserById" parameterType="String" resultMap="userInfo">
+        SELECT *
+        FROM user_info
+        WHERE id = #{id}
+    </select>
+
+    <!--通过用户名查找一个用户-->
+    <select id="searchUserByUserName" parameterType="String" resultMap="userInfo">
+        SELECT *
+        FROM user_info
+        WHERE user_name = #{user_name} ORDER BY id DESC LIMIT 1
+    </select>
+</mapper>
