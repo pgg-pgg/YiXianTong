@@ -24,4 +24,8 @@ public interface UserDao {
      * 根据用户名查询用户
      */
     User searchUserByUserName(String user_name);
+
+    void UpdateUserInfo(User user);
+
+    void UpdateUserState(User user);
 }

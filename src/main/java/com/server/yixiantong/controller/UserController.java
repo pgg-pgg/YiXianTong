@@ -1,20 +1,13 @@
 package com.server.yixiantong.controller;
 
 
-import com.alibaba.fastjson.JSON;;
-import com.server.yixiantong.domain.ResponseMessage;
 import com.server.yixiantong.domain.User;
 import com.server.yixiantong.service.UserEbi;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import sun.misc.BASE64Decoder;
-
 import javax.annotation.Resource;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 
 @RestController
 @RequestMapping("/User")
@@ -26,13 +19,21 @@ public class UserController {
     @RequestMapping(value = "/register", method = { RequestMethod.POST, RequestMethod.GET})
     public String insertUserCon(@RequestBody User user) {
         System.out.println(user.toString());
-        String result = userEbi.insertUser(user);
-        return result;
+        return userEbi.insertUser(user);
     }
 
     @RequestMapping(value = "/login", method = {RequestMethod.GET, RequestMethod.POST})
-    public String LoginCon(String id, String password) {
-        User user = userEbi.searchUserById(id);
-        return ResponseMessage.responseNot("密码错误");
+    public String LoginCon(String user_name, String user_pwd) {
+        return userEbi.Login(user_name,user_pwd);
+    }
+
+    @RequestMapping(value = "/updateUserInfo", method = {RequestMethod.POST, RequestMethod.GET})
+    public String UpdatePwdByIdCon(@RequestBody User user) {
+        return userEbi.updateUserInfo(user);
+    }
+
+    @RequestMapping(value = "/logout", method = {RequestMethod.POST, RequestMethod.GET})
+    public String Logout(@RequestBody User user) {
+        return userEbi.updateUserState(user);
     }
 }

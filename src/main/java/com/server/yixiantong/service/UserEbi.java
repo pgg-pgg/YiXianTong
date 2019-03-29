@@ -18,4 +18,10 @@ public interface UserEbi {
     User searchUserById(String id);
 
     User searchUserByUserName(String user_name);
+
+    String Login(String user_name,String user_pwd);
+
+    String updateUserInfo(User user);
+
+    String updateUserState(User user);
 }

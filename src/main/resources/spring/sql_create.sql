@@ -15,7 +15,7 @@ CREATE TABLE `user_info` (
  `user_identity_card` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '身份证\n',
  `user_nick_name` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '昵称\n',
  `user_sign` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '个性签名\n',
- `user_state` int(2) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '用户登录状态\n',
+ `user_state` int(2) COLLATE utf8_unicode_ci DEFAULT 0 COMMENT '用户登录状态\n',
  `push_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

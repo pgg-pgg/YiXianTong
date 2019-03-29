@@ -6,8 +6,8 @@
     <resultMap id="userInfo" type="com.server.yixiantong.domain.User"/>
     <!--添加一个用户-->
     <insert id="insertUser" parameterType="com.server.yixiantong.domain.User">
-        INSERT into user_info (user_name, user_pwd, user_nick_name)
-        VALUES (#{user_name}, #{user_pwd}, #{user_nick_name})
+        INSERT into user_info (user_name, user_pwd,user_icon, user_nick_name,user_state)
+        VALUES (#{user_name}, #{user_pwd},#{user_icon}, #{user_nick_name},#{user_state})
     </insert>
     <!--通过id查找一个用户-->
     <select id="searchUserById" parameterType="String" resultMap="userInfo">
@@ -22,4 +22,44 @@
         FROM user_info
         WHERE user_name = #{user_name} ORDER BY id DESC LIMIT 1
     </select>
+
+    <!--更新用户信息-->
+    <update id="UpdateUserInfo" parameterType="com.server.yixiantong.domain.User">
+        UPDATE user_info
+        <set>
+            <if test="user_mobile != null">
+                user_mobile=#{user_mobile},
+            </if>
+
+            <if test="user_real_name != null">
+                user_real_name=#{user_real_name},
+            </if>
+
+            <if test="user_identity_card != null">
+                user_identity_card=#{user_identity_card},
+            </if>
+
+            <if test="user_nick_name != null">
+                user_nick_name=#{user_nick_name},
+            </if>
+
+            <if test="user_sign != null">
+                user_sign=#{user_sign},
+            </if>
+        </set>
+        WHERE user_name=#{user_name}
+    </update>
+
+    <!--更新用户信息-->
+    <update id="UpdateUserState" parameterType="com.server.yixiantong.domain.User">
+        UPDATE user_info
+        <set>
+            <if test="user_state != null">
+                user_state=#{user_state},
+            </if>
+        </set>
+        WHERE user_name=#{user_name}
+    </update>
+
+
 </mapper>
