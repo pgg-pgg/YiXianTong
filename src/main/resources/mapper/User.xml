@@ -27,6 +27,10 @@
     <update id="UpdateUserInfo" parameterType="com.server.yixiantong.domain.User">
         UPDATE user_info
         <set>
+            <if test="user_icon != null">
+                user_icon=#{user_icon},
+            </if>
+
             <if test="user_mobile != null">
                 user_mobile=#{user_mobile},
             </if>

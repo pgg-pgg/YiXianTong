@@ -21,7 +21,7 @@ public class User {
     //用户签名
     private String user_sign;
     //用户登录状态
-    private int user_state;
+    private String user_state;
     //推送id
     private String push_id;
 
@@ -97,11 +97,11 @@ public class User {
         this.user_sign = user_sign;
     }
 
-    public int getUser_state() {
+    public String getUser_state() {
         return user_state;
     }
 
-    public void setUser_state(int user_state) {
+    public void setUser_state(String user_state) {
         this.user_state = user_state;
     }
 

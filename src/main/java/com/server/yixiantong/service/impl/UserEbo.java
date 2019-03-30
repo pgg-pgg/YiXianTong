@@ -55,7 +55,7 @@ public class UserEbo implements UserEbi {
         try {
             String res = client.registerUsers(new RegisterInfo[]{info});
             System.out.println(res);
-            user.setUser_state(1);
+            user.setUser_state("1");
             userDao.insertUser(user);
 
             ResponseMessage<User> message=new ResponseMessage<>(0,"注册成功！",user);
@@ -118,11 +118,14 @@ public class UserEbo implements UserEbi {
             if (!user.getUser_pwd().equals(user_pwd)){
                 return ResponseMessage.responseNot("登录失败，密码错误");
             }else {
+                user.setUser_state("1");
+                updateUserState(user);
                 ResponseMessage<User> message=new ResponseMessage<>(0,"登录成功！",user);
                 return JSON.toJSONString(message);
             }
         }
     }
+
 
     @Override
     public String updateUserInfo(User user) {
@@ -157,6 +160,8 @@ public class UserEbo implements UserEbi {
 
         if (user_icon!=null&&!user_icon.equals("")){
             setUserIcon(user);
+        }else {
+            user.setUser_icon(null);
         }
         if (user_nick_name!=null&&!user_nick_name.equals("")){
             build.setNickname(user_nick_name);
