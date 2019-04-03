@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.yixiantong.dao.TopNewsDao">
+    <resultMap id="topNewsInfo" type="com.server.yixiantong.domain.TopNews"/>
+    <!--添加一个用户-->
+    <insert id="insertTopNews" parameterType="com.server.yixiantong.domain.TopNews">
+        INSERT into top_news_info (leftTopImageUrl,topName,topDesc,goodsUrlLeft,goodsUrlRight)
+        VALUES (#{leftTopImageUrl}, #{topName},#{topDesc},#{goodsUrlLeft},#{goodsUrlRight})
+    </insert>
+    <!--通过id查找一个用户-->
+    <select id="getTopNewsList" resultMap="topNewsInfo">
+        SELECT *
+        FROM top_news_info
+    </select>
+</mapper>

@@ -20,6 +20,63 @@ CREATE TABLE `user_info` (
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+
+# 创建轮播图表
+CREATE TABLE `banner_info` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `bannerImageUrl` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '轮播图Url',
+ `clickUrl` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '跳转url',
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+# 创建频道表
+CREATE TABLE `channel_info` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `channelUrl` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '频道Url',
+ `channelName` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '频道名',
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+# 创建公告栏
+CREATE TABLE `comment_info` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `urlText` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '公告url',
+ `showText` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '公告名',
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+# 创建头条商品
+CREATE TABLE `top_news_info` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `leftTopImageUrl` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '头条title图标',
+ `topName` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '头条title',
+ `topDesc` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '头条描述',
+ `goodsUrlLeft` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '头条左商品url',
+ `goodsUrlRight` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '头条右商品url',
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+# 创建为您推荐
+CREATE TABLE `recommend_info` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `goodsImageUrl` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '为您推荐图片url',
+ `goodsName` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '商品名',
+ `goodsPrice` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '商品价格',
+ `goodsLabel` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'label标签',
+ `address` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '地址',
+ `manName` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '商家名',
+ `releaseTime` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '发布时间',
+ `goodsDesc` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '商品描述',
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+
+
+
 #购物车表创建
 CREATE TABLE `cart_goods` (
  `id` int(11) NOT NULL AUTO_INCREMENT,

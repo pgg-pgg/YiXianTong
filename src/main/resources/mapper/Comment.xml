@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.yixiantong.dao.CommentDao">
+    <resultMap id="commentInfo" type="com.server.yixiantong.domain.Comment"/>
+    <!--添加一个用户-->
+    <insert id="insertComment" parameterType="com.server.yixiantong.domain.Comment">
+        INSERT into comment_info (urlText,showText)
+        VALUES (#{urlText}, #{showText})
+    </insert>
+    <!--通过id查找一个用户-->
+    <select id="getCommentList" resultMap="commentInfo">
+        SELECT *
+        FROM comment_info
+    </select>
+</mapper>

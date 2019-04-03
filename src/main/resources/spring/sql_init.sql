@@ -35,6 +35,65 @@ INSERT INTO `category` (`id`, `category_name`, `category_icon`, `parent_id`) VAL
 (32, '摩托罗拉', 'https://img12.360buyimg.com/n7/jfs/t3109/185/1064081632/117451/2dba5e92/57c558e2N38a9e617.jpg', 2),
 (33, '索尼', 'https://img10.360buyimg.com/n7/jfs/t5191/190/2535818793/70090/78c559f5/591ba9f0Nd3a41fcb.jpg', 2);
 
+# 初始化banner
+INSERT INTO `banner_info` (`id`, `bannerImageUrl`, `clickUrl`) VALUES
+(1, 'banner/banner1.jpg', ''),
+(2, 'banner/banner2.jpg', ''),
+(3, 'banner/banner3.jpg', ''),
+(4, 'banner/banner4.jpg', '');
+
+
+INSERT INTO `channel_info` (`id`, `channelUrl`, `channelName`) VALUES
+(1, 'channel/channel_fruit.png', '新鲜水果'),
+(2, 'channel/channel_vegetable.png', '蔬菜豆品'),
+(3, 'channel/channel_meat.png', '肉禽蛋类'),
+(4, 'channel/channel_haixian.png', '海鲜水产'),
+(5, 'channel/channel_liangyou.png', '粮油副食'),
+(6, 'channel/channel_shiyongjun.png', '食用菌'),
+(7, 'channel/channel_jianguo.png', '坚果干果'),
+(8, 'channel/channel_tea.png', '鲜嫩茶叶'),
+(9, 'channel/channel_zhongyaocai.png', '中药材'),
+(10, 'channel/channel_huahui.png', '花卉盆景'),
+(11, 'channel/channel_baihuo.png', '农用百货'),
+(12, 'channel/channel_huafei.png', '常用化肥'),
+(13, 'channel/channel_nonyao.png', '防治农药'),
+(14, 'channel/channel_siliao.png', '饲料'),
+(15, 'channel/channel_tree.png', '农资种苗'),
+(16, 'channel/channel_tudi.png', '土地租赁'),
+(17, 'channel/channel_tuolaji.png', '农用车辆'),
+(18, 'channel/channel_yangzhi.png', '特种养殖'),
+(19, 'channel/channel_zhongzi.png', '种子'),
+(20, 'channel/channel_other.png', '其它分类');
+
+# 初始化公告
+INSERT INTO `comment_info` (`id`, `urlText`, `showText`) VALUES
+(1, '', '夏日炎炎，来个西瓜清凉一下'),
+(2, '', '爆款新品狂降价'),
+(3, '', '新用户立领1000元优惠券');
+
+# 初始化头条商品
+INSERT INTO `top_news_info` (`id`, `leftTopImageUrl`, `topName`,`topDesc`,`goodsUrlLeft`,`goodsUrlRight`) VALUES
+(1, 'top_news/top_news_banana.png', '海南香蕉','清凉水果来袭','top_news/top_news_banana_left.jpeg','top_news/top_news_banana_right.jpeg'),
+(2, 'top_news/top_news_jujube.png', '山东大枣','吃过的都说好','top_news/top_news_jujube_left.jpg','top_news/top_news_jujube_right.jpg'),
+(3, 'top_news/top_news_ginseng.png', '野山人参','补脾益肺,生津止渴','top_news/top_news_ginseng_left.jpeg','top_news/top_news_ginseng_right.jpg'),
+(4, 'top_news/top_news_yam.png', '铁棍山药','健脾胃,益肺气','top_news/top_news_yam_left.jpeg','top_news/top_news_yam_right.jpg'),
+(5, 'top_news/top_news_nut.png', '云南坚果','明目健脑,清香可口','top_news/top_news_nut_left.jpg','top_news/top_news_nut_right.jpg'),
+(6, 'top_news/top_news_walnut.png', '汾阳核桃','皮薄肉满,健脑益智！','top_news/top_news_walnut_left.jpg','top_news/top_news_walnut_right.jpg')
+;
+
+# 初始化推荐
+INSERT INTO `recommend_info` (`id`, `goodsImageUrl`, `goodsName`,`goodsPrice`,`goodsLabel`,`address`,`manName`,`releaseTime`,`goodsDesc`) VALUES
+(1, 'recommend/recommend_cabbage.jpeg', '优选甘蓝','0.6','1,1,1','河南省南阳市新野县','李平强','1分钟前','单颗重：1～1.5斤以上 1.5～2斤以上 2~2.5斤以上'),
+(2, 'recommend/recommend_xuesong.jpg', '雪松树苗','77.00','1,0,0','河南驻马店市汝南县','梅君楠','2分钟前' ,'3~3.5米 包技术指导 大量供应中...'),
+(3, 'recommend/recommend_dongzao.jpeg', '冬枣树苗','6.00','0,1,0','山东省滨州市沾化区','连明','3分钟前','提供管理技术，新品种沾冬2号冬枣'),
+(4, 'recommend/recommend_donggua.jpg', '黑皮冬瓜','1.00','0,0,1','四川省宜宾市江安县','邦成商贸有限公司','3分钟前','接受预定，6月上旬上市'),
+(5, 'recommend/recommend_miyou.jpg', '红心蜜柚','5.0','1,1,0','广西玉林市容县','容县四通农业有限公司','3分钟前','品种纯正，2斤以上'),
+(6, 'recommend/recommend_huanggua.jpeg', '密剌黄瓜','1.0','0,1,1','辽宁省朝阳市凌源市','凌源市一亩地农业有限公司','3分钟前','25公分以上，干花带剌')
+;
+
+
+
+
 #商品信息数据初始
 INSERT INTO `goods_info` (`id`, `category_id`, `goods_desc`, `goods_default_icon`, `goods_default_price`, `goods_banner`, `goods_detail_one`, `goods_detail_two`, `goods_sales_count`, `goods_stock_count`, `goods_code`, `goods_default_sku`) VALUES
 (1, 14, 'Apple MacBook Air 13.3英寸笔记本电脑 银色(Core i5 处理器/8GB内存/128GB SSD闪存 MMGF2CH/A)', 'https://img11.360buyimg.com/n7/jfs/t2968/143/2485546147/238650/70df281e/57b12a31N8f4f75a3.jpg', '1', 'https://img11.360buyimg.com/n1/s450x450_jfs/t2968/143/2485546147/238650/70df281e/57b12a31N8f4f75a3.jpg,https://img13.360buyimg.com/n1/s450x450_jfs/t2632/157/4193453761/92922/2adb5ebc/57ad88f0Nb286ec7a.jpg,https://img11.360buyimg.com/n1/s450x450_jfs/t2977/86/2412624329/68019/dbe32c1f/57ad8846N64ac3c79.jpg', 'https://img20.360buyimg.com/vc/jfs/t3034/151/748569500/226790/d6cd86a2/57b15612N81dc489d.jpg', 'https://img20.360buyimg.com/vc/jfs/t2683/60/4222930118/169462/233c7678/57b15616N1e285f09.jpg', 5000, 10000, '10000000001', '1.6GHz i5处理器,GB内存/128GB SSD,1件'),

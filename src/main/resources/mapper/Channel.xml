@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.yixiantong.dao.ChannelDao">
+    <resultMap id="channelInfo" type="com.server.yixiantong.domain.Channel"/>
+    <!--添加一个用户-->
+    <insert id="insertChannel" parameterType="com.server.yixiantong.domain.Channel">
+        INSERT into channel_info (channelUrl,channelName)
+        VALUES (#{channelUrl}, #{channelName})
+    </insert>
+    <!--通过id查找一个用户-->
+    <select id="getChannelList" resultMap="channelInfo">
+        SELECT *
+        FROM channel_info
+    </select>
+</mapper>

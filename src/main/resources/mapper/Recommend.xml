@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.yixiantong.dao.RecommendDao">
+    <resultMap id="recommendInfo" type="com.server.yixiantong.domain.Recommend"/>
+    <!--添加一个推荐-->
+    <insert id="insertRecommend" parameterType="com.server.yixiantong.domain.Recommend">
+        INSERT into recommend_info (goodsImageUrl,goodsName,goodsPrice,goodsLabel,address,manName,releaseTime,goodsDesc)
+        VALUES (#{goodsImageUrl}, #{goodsName},#{goodsPrice},#{goodsLabel},#{address},#{manName},#{releaseTime},#{goodsDesc})
+    </insert>
+    <!--获取所有推荐-->
+    <select id="getRecommendList" resultMap="recommendInfo">
+        SELECT *
+        FROM recommend_info
+    </select>
+
+
+
+</mapper>

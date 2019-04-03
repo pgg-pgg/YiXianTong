@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.yixiantong.dao.BannerDao">
+    <resultMap id="bannerInfo" type="com.server.yixiantong.domain.Banner"/>
+    <!--添加一个用户-->
+    <insert id="insertBanner" parameterType="com.server.yixiantong.domain.Banner">
+        INSERT into banner_info (bannerImageUrl,clickUrl)
+        VALUES (#{bannerImageUrl}, #{clickUrl})
+    </insert>
+    <!--通过id查找一个用户-->
+    <select id="getBannerList" resultMap="bannerInfo">
+        SELECT *
+        FROM banner_info
+    </select>
+</mapper>
