@@ -10,9 +10,9 @@
         VALUES (#{goodsImageUrl}, #{goodsName},#{goodsPrice},#{goodsLabel},#{address},#{manName},#{releaseTime},#{goodsDesc})
     </insert>
     <!--获取所有推荐-->
-    <select id="getRecommendList" resultMap="recommendInfo">
+    <select id="getRecommendList" parameterType="map" resultMap="recommendInfo">
         SELECT *
-        FROM recommend_info
+        FROM recommend_info limit #{pageNum},#{pageSize}
     </select>
 
 

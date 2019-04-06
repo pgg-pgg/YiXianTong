@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.yixiantong.dao.ClassifyTypeDao">
+    <resultMap id="classifyTypeInfo" type="com.server.yixiantong.domain.ClassifyTypeEntity"/>
+    <!--添加一个用户-->
+    <insert id="insertClassifyType" parameterType="com.server.yixiantong.domain.ClassifyTypeEntity">
+        INSERT into classify_type_info (typeName)
+        VALUES (#{typeName})
+    </insert>
+    <!--通过id查找一个用户-->
+    <select id="getAllClassifyType" resultMap="classifyTypeInfo">
+        SELECT *
+        FROM classify_type_info
+    </select>
+</mapper>

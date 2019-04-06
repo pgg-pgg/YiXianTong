@@ -11,5 +11,7 @@ public interface RecommendEbi {
 
     String insertRecommend(Recommend recommend);
 
-    List<Recommend> getRecommendList();
+    List<Recommend> getRecommendList(int curPage, int pageNum);
+
+    String getRecommendPageList(int curPage, int pageNum);
 }

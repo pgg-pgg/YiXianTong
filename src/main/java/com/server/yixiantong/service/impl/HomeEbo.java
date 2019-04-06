@@ -28,11 +28,11 @@ public class HomeEbo implements HomeEbi {
     public TopNewsDao topNewsDao;
 
     @Override
-    public String getHomeEntity() {
+    public String getHomeEntity(int curPage, int pageNum) {
         List<Banner> bannerList = bannerDao.getBannerList();
         List<Channel> channelList = channelDao.getChannelList();
         List<Comment> commentList = commentDao.getCommentList();
-        List<Recommend> recommendList = recommendDao.getRecommendList();
+        List<Recommend> recommendList = recommendDao.getRecommendList(curPage,pageNum);
         List<TopNews> topNewsList = topNewsDao.getTopNewsList();
         if (bannerList==null||channelList==null||commentList==null||recommendList==null||topNewsList==null){
             return ResponseMessage.responseNot("获取数据失败");

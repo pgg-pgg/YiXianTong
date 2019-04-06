@@ -73,7 +73,31 @@ CREATE TABLE `recommend_info` (
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+# 创建分类
+CREATE TABLE `classify_type_info` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `typeName` varchar(16) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '分类title',
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+
+# 创建子条目1
+CREATE TABLE `classify_desc_info` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `classifyTypeId` int(11) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '分类id',
+ `typeName` varchar(16) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '子条目名',
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+# 创建子条目2
+CREATE TABLE `goods_type_info` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `classifyDescId` int(16) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '子条目id',
+ `goodsImageUrl` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '商品图片url',
+ `goodsName` varchar(16) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '商品名',
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 

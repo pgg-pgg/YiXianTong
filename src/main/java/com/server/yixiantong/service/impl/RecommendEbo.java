@@ -23,8 +23,15 @@ public class RecommendEbo implements RecommendEbi {
     }
 
     @Override
-    public List<Recommend> getRecommendList() {
-        List<Recommend> recommends = recommendDao.getRecommendList();
+    public List<Recommend> getRecommendList(int curPage, int pageNum) {
+        List<Recommend> recommends = recommendDao.getRecommendList(curPage,pageNum);
         return recommends;
+    }
+
+    @Override
+    public String getRecommendPageList(int curPage, int pageNum) {
+        List<Recommend> recommends = recommendDao.getRecommendList(curPage,pageNum);
+        ResponseMessage<List<Recommend>> responseMessage = new ResponseMessage<>(0,"获取成功，当前页码"+curPage,recommends);
+        return JSON.toJSONString(responseMessage);
     }
 }
