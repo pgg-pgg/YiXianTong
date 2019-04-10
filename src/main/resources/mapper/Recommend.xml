@@ -15,6 +15,12 @@
         FROM recommend_info limit #{pageNum},#{pageSize}
     </select>
 
+    <!--获取所有推荐-->
+    <select id="getRecommendByGoodsName" resultMap="recommendInfo">
+        SELECT *
+        FROM recommend_info where goodsName=#{goodsName}
+    </select>
+
 
 
 </mapper>

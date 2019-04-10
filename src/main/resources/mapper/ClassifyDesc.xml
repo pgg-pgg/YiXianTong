@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.yixiantong.dao.ClassifyDescDao">
+    <resultMap id="classifyDescInfo" type="com.server.yixiantong.domain.ClassifyDescEntity"/>
+    <!--添加子条目-->
+    <insert id="insertClassifyDesc" parameterType="com.server.yixiantong.domain.ClassifyDescEntity">
+        INSERT into classify_desc_info (classifyTypeId,typeName)
+        VALUES (#{classifyTypeId},#{typeName})
+    </insert>
+    <!--通过id查找所有子条目-->
+    <select id="getAllClassifyDesc" resultMap="classifyDescInfo">
+        SELECT *
+        FROM classify_desc_info where classifyTypeId = #{classifyTypeId}
+    </select>
+</mapper>

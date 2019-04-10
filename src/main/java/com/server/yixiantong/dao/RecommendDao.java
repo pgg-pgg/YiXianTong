@@ -16,4 +16,6 @@ public interface RecommendDao {
 
     List<Recommend> getRecommendList(@Param("pageNum") int startIndex,@Param("pageSize")int pageNumIn);
 
+    Recommend getRecommendByGoodsName(String goodsName);
+
 }

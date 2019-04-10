@@ -1,17 +1,23 @@
 package com.server.yixiantong.domain;
 
+import java.util.List;
+
 /**
  * 为您推荐实体类
  */
 public class Recommend {
 
     private int id;
+    //商品轮播图url
+    private String goodsBannerUrl;
     //商品图片url
     private String goodsImageUrl;
     //商品名称
     private String goodsName;
     //商品价格
     private String goodsPrice;
+
+    private String goodsOldPrice;
     //商品标签 1 多图   2 认证  3 牛商   0代表没有这个标签，不为0则代表有
     private String goodsLabel;
     //商家地址
@@ -22,6 +28,10 @@ public class Recommend {
     private String releaseTime;
 
     private String goodsDesc;
+
+    private List<Comments> comments;
+    private List<Recommend> recommends;
+    private String goodsDetails;
 
     public int getId() {
         return id;
@@ -93,5 +103,45 @@ public class Recommend {
 
     public void setGoodsDesc(String goodsDesc) {
         this.goodsDesc = goodsDesc;
+    }
+
+    public String getGoodsBannerUrl() {
+        return goodsBannerUrl;
+    }
+
+    public void setGoodsBannerUrl(String goodsBannerUrl) {
+        this.goodsBannerUrl = goodsBannerUrl;
+    }
+
+    public List<Comments> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comments> comments) {
+        this.comments = comments;
+    }
+
+    public List<Recommend> getRecommends() {
+        return recommends;
+    }
+
+    public void setRecommends(List<Recommend> recommends) {
+        this.recommends = recommends;
+    }
+
+    public String getGoodsDetails() {
+        return goodsDetails;
+    }
+
+    public void setGoodsDetails(String goodsDetails) {
+        this.goodsDetails = goodsDetails;
+    }
+
+    public String getGoodsOldPrice() {
+        return goodsOldPrice;
+    }
+
+    public void setGoodsOldPrice(String goodsOldPrice) {
+        this.goodsOldPrice = goodsOldPrice;
     }
 }

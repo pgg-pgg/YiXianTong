@@ -34,6 +34,7 @@ CREATE TABLE `channel_info` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `channelUrl` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '频道Url',
  `channelName` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '频道名',
+ `clickUrl` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '跳转的url',
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -62,16 +63,35 @@ CREATE TABLE `top_news_info` (
 # 创建为您推荐
 CREATE TABLE `recommend_info` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
+ `goodsBannerUrl` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '轮播图图片url',
  `goodsImageUrl` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '为您推荐图片url',
  `goodsName` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '商品名',
+ `goodsOldPrice` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '商品原价',
  `goodsPrice` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '商品价格',
  `goodsLabel` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'label标签',
  `address` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '地址',
  `manName` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '商家名',
  `releaseTime` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '发布时间',
  `goodsDesc` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '商品描述',
+ `goodsDetails` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '商品详情url',
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+# 评论表
+CREATE TABLE `goods_commends_info` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `goodsId` int(11) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '商品id',
+ `ratingStar` int(11) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '评价星数',
+ `commentsName` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '评价人名',
+ `commentContent` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '评价内容',
+ `praiseNum` int(11) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '点赞数',
+ `treadNum` int(11) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '踩数',
+ `relayNum` int(11) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '转发数',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+
 
 # 创建分类
 CREATE TABLE `classify_type_info` (

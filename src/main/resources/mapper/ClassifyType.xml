@@ -9,7 +9,6 @@
         INSERT into classify_type_info (typeName)
         VALUES (#{typeName})
     </insert>
-    <!--通过id查找一个用户-->
     <select id="getAllClassifyType" resultMap="classifyTypeInfo">
         SELECT *
         FROM classify_type_info

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.yixiantong.dao.GoodsTypeDao">
+    <resultMap id="goodsTypeInfo" type="com.server.yixiantong.domain.GoodsTypeEntity"/>
+    <!--添加子条目-->
+    <insert id="insertGoodsType" parameterType="com.server.yixiantong.domain.GoodsTypeEntity">
+        INSERT into goods_type_info (goodsImageUrl,goodsName,classifyDescId)
+        VALUES (#{goodsImageUrl},#{goodsName},#{classifyDescId})
+    </insert>
+    <!--通过id查找所有子条目-->
+    <select id="getAllGoodsType" resultMap="goodsTypeInfo">
+        SELECT *
+        FROM goods_type_info where classifyDescId = #{classifyDescId}
+    </select>
+</mapper>

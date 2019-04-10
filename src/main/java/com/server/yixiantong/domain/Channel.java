@@ -8,6 +8,7 @@ public class Channel {
     private int id;
     private String channelUrl;
     private String channelName;
+    private String clickUrl;
 
     public int getId() {
         return id;
@@ -33,4 +34,11 @@ public class Channel {
         this.channelName = channelName;
     }
 
+    public String getClickUrl() {
+        return clickUrl;
+    }
+
+    public void setClickUrl(String clickUrl) {
+        this.clickUrl = clickUrl;
+    }
 }

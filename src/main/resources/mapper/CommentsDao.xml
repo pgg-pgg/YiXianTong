@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.yixiantong.dao.CommentsDao">
+    <resultMap id="commentsInfo" type="com.server.yixiantong.domain.Comments"/>
+    <!--添加一个评价-->
+    <insert id="insertComments" parameterType="com.server.yixiantong.domain.Comments">
+        INSERT into goods_commends_info (goodsId,ratingStar,commentsName,commentContent,praiseNum,treadNum,relayNum)
+        VALUES (#{goodsId}, #{ratingStar},#{commentsName},#{commentContent},#{praiseNum},#{treadNum},#{relayNum})
+    </insert>
+    <!--通过id查找一个评价-->
+    <select id="getCommentsList" resultMap="commentsInfo">
+        SELECT *
+        FROM goods_commends_info where goodsId = #{goodsId}
+    </select>
+</mapper>
