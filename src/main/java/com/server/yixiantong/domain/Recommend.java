@@ -32,6 +32,7 @@ public class Recommend {
     private List<Comments> comments;
     private List<Recommend> recommends;
     private String goodsDetails;
+    private List<GoodsSku> goodsSkus;
 
     public int getId() {
         return id;
@@ -143,5 +144,13 @@ public class Recommend {
 
     public void setGoodsOldPrice(String goodsOldPrice) {
         this.goodsOldPrice = goodsOldPrice;
+    }
+
+    public List<GoodsSku> getGoodsSkus() {
+        return goodsSkus;
+    }
+
+    public void setGoodsSkus(List<GoodsSku> goodsSkus) {
+        this.goodsSkus = goodsSkus;
     }
 }

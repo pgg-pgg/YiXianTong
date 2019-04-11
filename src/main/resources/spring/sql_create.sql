@@ -1,9 +1,9 @@
 #数据库创建
-CREATE DATABASE `DaDa` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
+CREATE DATABASE `yixiannon` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
 
 #用户表创建
 
-use  dada;
+use  yixiannon;
 #用户表创建
 CREATE TABLE `user_info` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -116,6 +116,7 @@ CREATE TABLE `goods_type_info` (
  `classifyDescId` int(16) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '子条目id',
  `goodsImageUrl` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '商品图片url',
  `goodsName` varchar(16) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '商品名',
+ `clickUrl` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '点击的url',
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -163,7 +164,7 @@ CREATE TABLE `goods_info` (
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 #商品sku表创建
-CREATE TABLE `goods_sku` (
+CREATE TABLE `goods_sku_info` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `goods_id` int(11) DEFAULT NULL,
  `goods_sku_title` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,

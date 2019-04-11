@@ -6,6 +6,7 @@ public class GoodsTypeEntity {
     private String goodsImageUrl;
     private String goodsName;
     private int classifyDescId;
+    private String clickUrl;
 
     public int getId() {
         return id;
@@ -37,5 +38,13 @@ public class GoodsTypeEntity {
 
     public void setGoodsName(String goodsName) {
         this.goodsName = goodsName;
+    }
+
+    public String getClickUrl() {
+        return clickUrl;
+    }
+
+    public void setClickUrl(String clickUrl) {
+        this.clickUrl = clickUrl;
     }
 }

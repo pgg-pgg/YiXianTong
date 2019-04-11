@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.yixiantong.dao.GoodsSkuDao">
+    <resultMap id="goodsSkuInfo" type="com.server.yixiantong.domain.GoodsSku"/>
+    <!--添加一个用户-->
+    <insert id="insertGoodsSku" parameterType="com.server.yixiantong.domain.GoodsSku">
+        INSERT into goods_sku_info (goods_id,goods_sku_title,goods_sku_content)
+        VALUES (#{goods_id}, #{goods_sku_title},#{goods_sku_content})
+    </insert>
+    <!--通过id查找一个用户-->
+    <select id="getGoodsSkuByGoodsId" resultMap="goodsSkuInfo">
+        SELECT *
+        FROM goods_sku_info where goods_id=#{goods_id}
+    </select>
+</mapper>
