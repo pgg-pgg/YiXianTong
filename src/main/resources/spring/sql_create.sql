@@ -123,17 +123,17 @@ CREATE TABLE `goods_type_info` (
 
 
 #购物车表创建
-CREATE TABLE `cart_goods` (
+CREATE TABLE `cart_goods_info` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `goods_id` int(11) DEFAULT NULL,
  `goods_desc` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
  `goods_icon` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
  `goods_price` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
  `goods_count` int(11) DEFAULT NULL,
- `user_id` int(11) DEFAULT NULL,
+ `user_name` varchar(45) DEFAULT NULL,
  `goods_sku` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 #商品分类创建
 CREATE TABLE `category` (
@@ -185,7 +185,7 @@ CREATE TABLE `message_info` (
  UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 #订单商品表创建
-	CREATE TABLE `order_goods` (
+CREATE TABLE `order_goods_info` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `goods_id` int(11) DEFAULT NULL,
  `goods_desc` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -196,28 +196,30 @@ CREATE TABLE `message_info` (
  `order_id` int(11) DEFAULT NULL,
  PRIMARY KEY (`id`),
  UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 #订单信息表创建
 CREATE TABLE `order_info` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
- `user_id` int(11) DEFAULT NULL,
+ `user_name` varchar (45) DEFAULT NULL,
  `pay_type` int(11) DEFAULT NULL,
  `ship_id` int(11) DEFAULT NULL,
  `total_price` int(11) DEFAULT NULL,
  `order_status` int(11) DEFAULT NULL,
  PRIMARY KEY (`id`),
  UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 #地址管理表创建
-	CREATE TABLE `ship_address` (
+	CREATE TABLE `ship_address_info` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `ship_user_name` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
  `ship_user_mobile` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
  `ship_address` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
  `ship_is_default` int(11) DEFAULT NULL,
- `user_id` int(11) DEFAULT NULL,
+ `user_name` varchar(45) DEFAULT NULL,
  PRIMARY KEY (`id`),
  UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
