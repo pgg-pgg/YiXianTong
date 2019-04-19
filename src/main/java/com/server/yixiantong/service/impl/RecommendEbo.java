@@ -70,4 +70,18 @@ public class RecommendEbo implements RecommendEbi {
         }
         return ResponseMessage.responseNot("获取失败");
     }
+
+    @Override
+    public String searchGoodsByName(String goodsName) {
+        if (goodsName==null||goodsName.equals("")){
+            return ResponseMessage.responseNot("未查询到数据");
+        }
+        List<Recommend> recommends = recommendDao.searchGoodsByName(goodsName);
+        if (recommends==null||recommends.size()<=0){
+            return ResponseMessage.responseNot("未查询到数据");
+        }else {
+            ResponseMessage<List<Recommend>> message = new ResponseMessage<>(0,"查询成功",recommends);
+            return JSON.toJSONString(message);
+        }
+    }
 }

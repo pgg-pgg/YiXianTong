@@ -18,4 +18,6 @@ public interface RecommendDao {
 
     Recommend getRecommendByGoodsName(String goodsName);
 
+    List<Recommend> searchGoodsByName(String goodsName);
+
 }

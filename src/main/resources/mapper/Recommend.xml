@@ -20,6 +20,11 @@
         SELECT *
         FROM recommend_info where goodsName=#{goodsName}
     </select>
+    
+    <select id="searchGoodsByName" resultMap="recommendInfo">
+        select *
+        from recommend_info where goodsName like concat(concat('%',#{goodsName}),'%')
+    </select>
 
 
 

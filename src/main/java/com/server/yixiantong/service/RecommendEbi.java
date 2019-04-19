@@ -16,4 +16,6 @@ public interface RecommendEbi {
     String getRecommendPageList(int curPage, int pageNum);
 
     String getRecommendByGoodsName(String goodsName);
+
+    String searchGoodsByName(String goodsName);
 }

@@ -30,5 +30,12 @@ public class HomeController {
         return recommendEbi.getRecommendPageList(curPage,pageNum);
     }
 
+    @RequestMapping(value = "/searchGoodsByName", method = {RequestMethod.GET})
+    public String getRecommendData(String goodsName) {
+        return recommendEbi.searchGoodsByName(goodsName);
+    }
+
+
+
 
 }

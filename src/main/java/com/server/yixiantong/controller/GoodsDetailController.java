@@ -35,4 +35,5 @@ public class GoodsDetailController {
         return JSON.toJSONString(responseMessage);
     }
 
+
 }
